@@ -6,7 +6,8 @@ const MusicPlayer = () => {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    audioRef.current = new Audio('/valentine-music.mp3');
+    const base = import.meta.env.BASE_URL;
+    audioRef.current = new Audio(`${base}valentine-music.mp3`);
     audioRef.current.loop = true;
     audioRef.current.volume = 0.4;
 
